@@ -14,7 +14,7 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
         data.forEach(pokemondata => 
             {
                 const li = document.createElement("li");
-                li.textContent = pokemondata.title; 
+                li.textContent = pokemondata.name; 
                 listPokemon.appendChild(li);
              }
         );
