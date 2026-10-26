@@ -1,1 +1,99 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111827;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1f2937;
+    border-bottom: 3px solid #ef4444;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #ef4444;
+}
+
+/* ALLE TRE SECTIONS */
+
+section {
+    background-color: #1f2937;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+/* LABELS */
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #d1d5db;
+}
+
+/* INPUT OG DROPDOWNS */
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    background-color: #111827;
+    color: white;
+    border: 1px solid #4b5563;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #ef4444;
+    outline-offset: 2px;
+}
+
+/* FARVER PÅ SECTIONS */
+
+.pokemonSøg {
+    border-left: 4px solid #ef4444;
+}
+
+.filter {
+    border-left: 4px solid #3b82f6;
+}
+
+.sortering {
+    border-left: 4px solid #22c55e;
+}
+
+#pokemonContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 34px;
+    }
+
+    section {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+}
