@@ -2,13 +2,24 @@
 
 fetch(`https://zzzjos.dk/pokemon/api/data.php`)
 .then(response => response.json())
-    .then(movies => {
-        renderData(movies);
+    .then(pokemonPokemon => {
+        RenderData(pokemonPokemon);
   
     });
 
 
-    function (data) 
+    function RenderData (data) 
     {
-        
+        const listPokemon = document.querySelector("#dump");
+        data.forEach(pokemondata => 
+            {
+                const li = document.createElement("li");
+                li.textContent = pokemondata.title; 
+                listPokemon.appendChild(li);
+             }
+        );
     }
+
+    
+
+    
