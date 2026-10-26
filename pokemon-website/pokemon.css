@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 * {
     box-sizing: border-box;
 }
@@ -97,3 +98,97 @@ input:focus, select:focus {
         padding: 20px;
     }
 }
+=======
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  background: #f3f5fb;
+  color: #1c2a5a;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+.card-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  aspect-ratio: 1/1;
+  padding: 16px;
+  border-radius: 48px;
+
+  text-decoration: grey;
+  color: inherit;
+  text-align: left;
+
+  /* INTEARAKTIVITET */
+  box-shadow: 0 8px 24px rgba(28, 42, 90, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-pokemons {background: #e8552b}
+.card-trainers {background: #4cc39a}
+.card-dashboard {background: #1c2a5a}
+
+.card-title{
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.card-image{
+  flex:1;
+}
+
+.card-info{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: white;
+  border-radius: 20px;
+  padding: 12px 12px 12px 20px;
+}
+.card-info strong {
+  display: flex;
+  font-size: 1.2rem;
+}
+.card-info small {
+  color: #4a5a8a;
+}
+.card-play {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 28px;
+  background: #f4c542;;
+}
+.card:hover {
+  transform: translateY(6px);
+  box-shadow: 0 16px 32px rgba(28, 42, 90, 0.2);
+}
+.card:hover card-play{
+  transform:scale(1.6);
+}
+>>>>>>> Stashed changes
