@@ -10,12 +10,22 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
 
     function RenderData (data) 
     {
-        const listPokemon = document.querySelector("#dump");
+        const listPokemon = document.querySelector("#pokemonContainer");
         data.forEach(pokemondata => 
             {
-                const li = document.createElement("li");
-                li.textContent = pokemondata.name; 
-                listPokemon.appendChild(li);
+                const card = document.createElement("article");
+                card.classList.add("pokemon-card")
+
+                const pokemonImage = document.createElement("img") 
+                pokemonImage.alt = pokemondata.name;
+
+               
+
+                if (pokemondata.primary_type)
+                     {
+                    card.classList.add(pokemondata.primary_type.toLowerCase());
+                    }
+                     listPokemon.appendChild(card);
              }
         );
     }

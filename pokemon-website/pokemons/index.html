@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <title>Pokemons</title>
   <link rel="stylesheet" href="../pokemon.css">
+  <script src = "pokemon.js" defer ></script>
 </head>
-<body>
+<body class = "pokemonsBody">
 <header>
   <H1>Pokévanta</H1>
 </header>
 
+<div class = "pokeBoksStor">
 <section class ="pokemonSøg">
   <h2>Søg efter Pokemons</h2>
   <label for="search">pokemon navn:</label>
@@ -44,12 +46,14 @@
   </select>
 </section>
 
+</div>
+
 <section class="pokemonResultater">
   <h2>Alle Pokémon</h2>
 
-  <div id="pokemonContainer">
+  <article id="pokemonContainer">
     <!-- Pokémon indsætteds her med js -->
-  </div>
+  </article>
 </section>
 
 

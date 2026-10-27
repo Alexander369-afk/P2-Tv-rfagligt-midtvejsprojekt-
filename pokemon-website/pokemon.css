@@ -10,6 +10,14 @@ body {
     color: white;
 }
 
+.pokemonsBody {
+    background: linear-gradient(135deg, #150b2b, #30005c);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
 /* HEADER */
 
 header {
@@ -28,12 +36,10 @@ header h1 {
 /* ALLE TRE SECTIONS */
 
 section {
-    background-color: #1f2937;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #242638;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 35px;
 }
 
 section h2 {
@@ -78,6 +84,23 @@ input:focus, select:focus {
 
 .sortering {
     border-left: 4px solid #22c55e;
+}
+
+.pokeBoksStor {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px auto;
+}
+
+.pokeBoksStor section {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    padding: 0 15px;
+    margin: 0;
+    border-radius: 0;
 }
 
 #pokemonContainer {
