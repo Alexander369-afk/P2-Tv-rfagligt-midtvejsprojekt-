@@ -11,6 +11,8 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
     function RenderData (data) 
     {
         const listPokemon = document.querySelector("#pokemonContainer");
+        listPokemon.replaceChildren();
+
         data.forEach(pokemondata => 
             {
                 const card = document.createElement("article");
@@ -18,6 +20,7 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
 
                 const pokemonImage = document.createElement("img") 
                 pokemonImage.alt = pokemondata.name;
+                pokemonImage.src = Pokemon_Placeholder.png
 
                
 
@@ -25,7 +28,7 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
                      {
                     card.classList.add(pokemondata.primary_type.toLowerCase());
                     }
-                     listPokemon.appendChild(card);
+             listPokemon.appendChild(card);
              }
         );
     }
