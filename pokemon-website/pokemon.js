@@ -25,6 +25,7 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
                 pokemonName.textContent = pokemondata.name;
 
                 
+                
 
                 if (pokemondata.primary_type)
                      {

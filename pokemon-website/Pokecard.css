@@ -2,4 +2,25 @@
  {
     display: grid; 
     gap: 16px; 
+    grid-template-columns: repeat(6, 8fr);
 }
+.pokemon-card 
+{
+    border: 3px solid #7b4f4f;
+    border-radius: 12px;
+    text-align: center;
+
+
+}
+
+.pokemon-card img
+{
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 8px auto;
+
+}
+
+.pokemon-card.fire  { border-color: #ff4422; }
+.pokemon-card.water { border-color: #3399ff; }
+.pokemon-card.grass { border-color: #77cc55; }
