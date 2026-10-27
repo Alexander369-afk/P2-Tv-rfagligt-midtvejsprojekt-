@@ -19,12 +19,13 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
                 const pokemonImage = document.createElement("img") 
                 pokemonImage.alt = pokemondata.name;
 
-                listPokemon.appendChild(card);
+               
 
                 if (pokemondata.primary_type)
                      {
                     card.classList.add(pokemondata.primary_type.toLowerCase());
                     }
+                     listPokemon.appendChild(card);
              }
         );
     }
