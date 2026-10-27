@@ -20,7 +20,9 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
 
                 const pokemonImage = document.createElement("img") 
                 pokemonImage.alt = pokemondata.name;
-                pokemonImage.src = Pokemon_Placeholder.png
+                pokemonImage.src = "Pokemon_Placeholder.png";
+                const pokemonName = document.createElement ("h4")
+                pokemonName.textContent = pokemondata.name;
 
                
 
@@ -28,6 +30,9 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
                      {
                     card.classList.add(pokemondata.primary_type.toLowerCase());
                     }
+                    
+             card.appendChild(pokemonName);
+             card.appendChild(pokemonImage);
              listPokemon.appendChild(card);
              }
         );
