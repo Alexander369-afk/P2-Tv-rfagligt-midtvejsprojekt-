@@ -20,11 +20,11 @@ fetch(`https://zzzjos.dk/pokemon/api/data.php`)
 
                 const pokemonImage = document.createElement("img") 
                 pokemonImage.alt = pokemondata.name;
-                pokemonImage.src = "Pokemon_Placeholder.png";
+                pokemonImage.src = "../Images/Pokemon_Placeholder.png";
                 const pokemonName = document.createElement ("h4")
                 pokemonName.textContent = pokemondata.name;
 
-               
+                
 
                 if (pokemondata.primary_type)
                      {
