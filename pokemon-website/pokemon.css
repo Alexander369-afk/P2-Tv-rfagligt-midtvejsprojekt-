@@ -114,6 +114,12 @@ input:focus, select:focus {
     gap: 20px;
 }
 
+#trænerContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 .træ
 
  MOBIL 
