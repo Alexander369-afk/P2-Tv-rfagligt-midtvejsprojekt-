@@ -17,8 +17,8 @@
     border: 3px solid #7b4f4f;
     border-radius: 12px;
     text-align: center; 
-    background-color: rgba(20, 24, 33, 0.85);
-    background-blend-mode: darken; /* Test også 'multiply' eller 'overlay' */
+    background-color: rgba(20, 24, 33, 0.35);
+    background-blend-mode: overlay; /* Test også 'multiply' eller 'overlay' */
 
 }
 
@@ -146,6 +146,24 @@
 
     border-color: #0e5dad; 
     background-image: url("Images/Dragon-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+.pokemon-card.fighting
+{
+
+    border-color: #0e5dad; 
+    background-image: url("Images/Fighting-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+.pokemon-card.normal
+{
+
+    border-color: #0e5dad; 
+    background-image: url("Images/Normal-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
