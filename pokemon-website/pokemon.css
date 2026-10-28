@@ -108,6 +108,25 @@ input:focus, select:focus {
     border-radius: 0;
 }
 
+.trænerInput {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.trænerInput input {
+    flex: 1;
+    min-width: 0;
+}
+
+.trænerInput button {
+    padding: 10px 15px;
+    border: 2px solid #666;
+    border-radius: 10px;
+    background-color: #50566b;
+    color: #ffffff;
+}
+
 #pokemonContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
