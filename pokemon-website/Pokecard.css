@@ -4,6 +4,14 @@
     gap: 16px; 
     grid-template-columns: repeat(6, 8fr);
 }
+
+#trainerContainer
+ {
+    display: grid; 
+    gap: 16px; 
+    grid-template-columns: repeat(4, 8fr);
+}
+
 .pokemon-card 
 {
     border: 3px solid #7b4f4f;
