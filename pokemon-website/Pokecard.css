@@ -8,9 +8,9 @@
 {
     border: 3px solid #7b4f4f;
     border-radius: 12px;
-    text-align: center;
-    
-
+    text-align: center; 
+    background-color: rgba(20, 24, 33, 0.85);
+    background-blend-mode: darken; /* Test også 'multiply' eller 'overlay' */
 
 }
 
@@ -40,15 +40,15 @@
 {
 
     border-color: #77cc55; 
-    background-image: url("../Images/grass-tekstur.jpg");
+    background-image: url("Images/Grass-tekstur.jpg");
     background-size: cover;
-    background-position: center; 
+    background-position: center;  
 }
 .pokemon-card.fire
 {
 
     border-color: #ff4422;
-    background-image: url("../Images/Fire-tekstur.jpg");
+    background-image: url("Images/Fire-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
@@ -56,15 +56,88 @@
 {
 
     border-color: #3399ff; 
-    background-image: url("../Images/Water-tekstur.jpg");
+    background-image: url("Images/Water-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
-.pokemon-card.grass 
+.pokemon-card.rock
+{
+
+    border-color: #964B00
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.psychic
+{
+
+    border-color: #f024a9; 
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.fairy
+{
+
+    border-color: #3399ff; 
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.ground
+{
+
+    border-color: #3399ff; 
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.electric
+{
+
+    border-color: #3399ff; 
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.poison
+{
+
+    border-color: #3399ff; 
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.bug
 {
 
     border-color: #77cc55; 
     background-image: url("../Images/grass-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.ghost
+{
+
+    border-color: #3399ff; 
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+.pokemon-card.ice
+{
+
+    border-color: #3399ff; 
+    background-image: url("Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.dragon
+{
+
+    border-color: #3399ff; 
+    background-image: url("Images/Water-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
