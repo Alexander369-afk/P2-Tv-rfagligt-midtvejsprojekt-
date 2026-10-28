@@ -2,15 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trainers</title>
+  <title>Træner</title>
   <link rel="stylesheet" href="../pokemon.css">
+  <link rel="stylesheet" href="../Pokecard.css">
+  <script src = "../pokemon.js" defer ></script>
 </head>
-<body>
-<h2>Opret Træner</h2>
-<input type="text" id="trainerName" placeholder="indstast navn">
-<button id="opretTræner">Opret Træner</button>
+<body class = "pokemonsBody">
+<header>
+  <H1>Pokeview</H1>
+  <h2>Træner</h2>
+</header>
 
-<p id="message"></p>
+<div class = "pokeBoksStor">
+  <section class ="trænerOpret">
+    <h2>Opret en træner</h2>
+    <label for="search">Træner navn:</label>
+
+    <input type="text" id = "search" placeholder="Skriv et navn">
+
+    <a>
+      <button type="button">Opret</button>
+    </a>
+  </section>
+
+  <section class ="filterTræner">
+    <h2>Filter af Træner</h2>
+    <label for="typeFilterTræner">Filter:</label>
+
+    <select id="typeFilterTræner">
+      <option value="all">Alle typer</option>
+      <option value="begynder">Begynder</option>
+      <option value="letØvet">Let Øvet</option>
+      <option value="øvet">Øvet</option>
+      <option value="rutineret">Rutineret</option>
+      <option value="ekspert">Ekspert</option>
+      <option value="goat">Goat</option>
+      <option value="gymLeader">Gym Leaders</option>
+    </select>
+  </section>
+
+  <section class="sortering">
+    <h2>sortering af Trænere</h2>
+    <label for="sorteringTrænere">Sortering af trænere:</label>
+
+    <select id="sorteringTrænere">
+      <option value="trænerId">Træner Id</option>
+      <option value="navn">Navn</option>
+      <option value="by">By</option>
+      <option value="antalBadges">Antal Badges</option>>
+      <option value="antalSejre">Antal Sejre</option>
+      <option value="alder">Alder</option>
+    </select>
+
+    <label for="sortOrder">Rækkefølge:</label>
+
+    <select id="sortOrder">
+      <option value="ASC">Laveste først (A-Å)</option>
+      <option value="DESC">Højeste først (Å-A)</option>
+    </select>
+  </section>
+</div>
+
+<section class="pokemonResultater">
+  <h2>Alle Trænere</h2>
+
+  <article id="pokemonContainer">
+    <!-- Pokémon indsætteds her med js -->
+  </article>
+</section>
+
 
 </body>
 </html>
