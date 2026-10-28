@@ -79,3 +79,6 @@ document.querySelector("#sortOrder").addEventListener("change", hentPokemon);
 
 // Hent Pokémon når siden åbnes
 hentPokemon();
+
+
+baj
