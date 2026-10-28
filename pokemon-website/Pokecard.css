@@ -4,13 +4,21 @@
     gap: 16px; 
     grid-template-columns: repeat(6, 8fr);
 }
+
+#trainerContainer
+ {
+    display: grid; 
+    gap: 16px; 
+    grid-template-columns: repeat(4, 8fr);
+}
+
 .pokemon-card 
 {
     border: 3px solid #7b4f4f;
     border-radius: 12px;
     text-align: center; 
-    background-color: rgba(20, 24, 33, 0.85);
-    background-blend-mode: darken; /* Test også 'multiply' eller 'overlay' */
+    background-color: rgba(20, 24, 33, 0.35);
+    background-blend-mode: overlay; /* Test også 'multiply' eller 'overlay' */
 
 }
 
@@ -63,8 +71,8 @@
 .pokemon-card.rock
 {
 
-    border-color: #964B00
-    background-image: url("Images/Water-tekstur.jpg");
+    border-color: #964B00;
+    background-image: url("Images/Rock-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
@@ -72,7 +80,7 @@
 {
 
     border-color: #f024a9; 
-    background-image: url("Images/Water-tekstur.jpg");
+    background-image: url("Images/Psychic-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
@@ -80,31 +88,31 @@
 {
 
     border-color: #3399ff; 
-    background-image: url("Images/Water-tekstur.jpg");
+    background-image: url("Images/Fairy-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
 .pokemon-card.ground
 {
 
-    border-color: #3399ff; 
-    background-image: url("Images/Water-tekstur.jpg");
+    border-color: #422201;
+    background-image: url("Images/Ground-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
 .pokemon-card.electric
 {
 
-    border-color: #3399ff; 
-    background-image: url("Images/Water-tekstur.jpg");
+    border-color: #f1ff33; 
+    background-image: url("Images/Electric-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
 .pokemon-card.poison
 {
 
-    border-color: #3399ff; 
-    background-image: url("Images/Water-tekstur.jpg");
+    border-color: #035203; 
+    background-image: url("Images/Poison-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
@@ -112,15 +120,15 @@
 {
 
     border-color: #77cc55; 
-    background-image: url("../Images/grass-tekstur.jpg");
+    background-image: url("Images/Bug-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
 .pokemon-card.ghost
 {
 
-    border-color: #3399ff; 
-    background-image: url("Images/Water-tekstur.jpg");
+    border-color: #d0d0d0; 
+    background-image: url("Images/Ghost-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
@@ -128,16 +136,34 @@
 .pokemon-card.ice
 {
 
-    border-color: #3399ff; 
-    background-image: url("Images/Water-tekstur.jpg");
+    border-color: #9ac6f1; 
+    background-image: url("Images/Ice-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
 .pokemon-card.dragon
 {
 
-    border-color: #3399ff; 
-    background-image: url("Images/Water-tekstur.jpg");
+    border-color: #0e5dad; 
+    background-image: url("Images/Dragon-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+.pokemon-card.fighting
+{
+
+    border-color: #0e5dad; 
+    background-image: url("Images/Fighting-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+.pokemon-card.normal
+{
+
+    border-color: #0e5dad; 
+    background-image: url("Images/Normal-tekstur.jpg");
     background-size: cover;
     background-position: center; 
 }
