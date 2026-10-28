@@ -9,6 +9,7 @@
     border: 3px solid #7b4f4f;
     border-radius: 12px;
     text-align: center;
+    
 
 
 }
@@ -18,9 +19,52 @@
     max-width: 100%;
     height: auto;
     margin: 0 auto 8px auto;
+    object-fit: contain;
 
 }
 
-.pokemon-card.fire  { border-color: #ff4422; }
-.pokemon-card.water { border-color: #3399ff; }
-.pokemon-card.grass { border-color: #77cc55; }
+.pokemon-card h4 
+{
+    margin: 0; 
+    padding: 4px 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Segoe UI';
+    text-transform: uppercase;
+    display: inline-block;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+
+}
+
+.pokemon-card.grass 
+{
+
+    border-color: #77cc55; 
+    background-image: url("../Images/grass-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.fire
+{
+
+    border-color: #ff4422;
+    background-image: url("../Images/Fire-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.water
+{
+
+    border-color: #3399ff; 
+    background-image: url("../Images/Water-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+.pokemon-card.grass 
+{
+
+    border-color: #77cc55; 
+    background-image: url("../Images/grass-tekstur.jpg");
+    background-size: cover;
+    background-position: center; 
+}
