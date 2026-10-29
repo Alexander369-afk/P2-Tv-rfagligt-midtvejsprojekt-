@@ -18,6 +18,19 @@ const connection = db.createConnection({
     database: process.env.DB_DATABASE
 });
 
+// hent trainer
+
+app.get('/trainer', (req, res) => {
+connection.query("SELECT * FROM trainer", (error, results) => {
+ if (error) {
+console.error("Databasefejl:", error);
+return res.status(500).send(error.message);
+}
+res.json(results); //
+});
+
+});
+
 // Hent alle Pokemon
 app.get('/all', (req, res) => {
 
