@@ -21,14 +21,40 @@ const connection = db.createConnection({
 // hent trainer
 
 app.get('/trainer', (req, res) => {
-connection.query("SELECT * FROM trainer", (error, results) => {
- if (error) {
-console.error("Databasefejl:", error);
-return res.status(500).send(error.message);
-}
-res.json(results); //
-});
 
+    const type = req.query.type || "all";
+    const sort = req.query.sort || "trænerId";
+    const order = req.query.order || "ASC";
+
+    const allowedSort = {
+        trænerId: "trainer_id",
+        navn: "trainer_name",
+        by: "hometown",
+        alder: "age",
+        antalBadges: "badge_count"
+    };
+
+    const sortColumn = allowedSort[sort] || "trainer_id";
+    const sortOrder = order.toUpperCase() === "DESC" ? "DESC" : "ASC";
+
+    let sql = "SELECT * FROM trainer";
+    const values = [];
+
+    if (type !== "all") {
+        sql += " WHERE level_id = ?";
+        values.push(type);
+    }
+
+    sql += ` ORDER BY ${sortColumn} ${sortOrder}`;
+
+    connection.query(sql, values, (error, results) => {
+        if (error) {
+            console.log("SQL FEJL:", error);
+            return res.status(500).send(error.message);
+        }
+
+        res.json(results);
+    });
 });
 
 // Hent alle Pokemon
@@ -62,8 +88,8 @@ app.post('/trainer/new', (req, res) => {
     const pokemonId = req.body.pokemonId;
 
             connection.query(
-                "INSERT INTO trainer (trainer_name, hometown, age) VALUES (?, ?, ?)",
-                [trainerName, homeTown, trainerAge],
+                "INSERT INTO trainer (trainer_name, hometown, age, level_id) VALUES (?, ?, ?, ?)",
+                [trainerName, homeTown, trainerAge, 1],
                 (error, result) => {
                     if (error) {
                         console.log("FEJL VED OPRET TRÆNER:", error.message);
