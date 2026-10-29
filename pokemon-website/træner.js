@@ -1,11 +1,26 @@
-document.getElementById("opretTræner").addEventListener("click", ()  => {
-    const navn = document.getElementById("trænerNavn").value.trim();
+console.log("Træner.js virker!");
 
-    if (!name) {
-        alert("du har ikke indtastet et navn");
-        return;
-    }
+function opretTræner(){
+   const navn = document.querySelector("#trænerNavn").value.trim();
+   const homeTown = document.querySelector("#homeTown").value.trim();
+   const alder = document.querySelector("#trainerAge").value.trim();
+if (!navn && !homeTown && !alder) {
+    alert("indtast et træner navn, alder og by");
+    return;
+}
 
-    fetch(`https://zzzjos.dk/pokemon/api/data.php`)
+fetch("http://localhost:3000/trainer/new", {
+    method: "POST",
+    headers: {
+        "content-type": "application/json"
+    }, body: JSON.stringify({
+        trainerName: navn,
+        homeTown: homeTown,
+        trainerAge: alder
+
+    })
+});
 
 }
+
+document.querySelector("#opretTræner").addEventListener("click", opretTræner);
