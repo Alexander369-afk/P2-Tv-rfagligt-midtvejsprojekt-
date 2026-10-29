@@ -114,6 +114,49 @@ app.post('/trainer/new', (req, res) => {
             );
 });
 
+
+app.get('/statistics', (req, res) => {
+
+    const sql = `
+        SELECT primary_type,
+               COUNT(*) AS antal,
+               AVG(attack) AS gennemsnitAttack
+        FROM pokemon
+        GROUP BY primary_type
+    `;
+
+    connection.query(sql, (error, results) => {
+        if (error) {
+            return res.status(500).send(error.message);
+        }
+
+        res.json(results);
+    });
+});
+
+app.get('/statistics/trainers', (req, res) => {
+
+    const sql = `
+        SELECT trainer.trainer_name,
+               COUNT(trainer_pokemon.pokedex_number) AS antal
+        FROM trainer
+        LEFT JOIN trainer_pokemon
+        ON trainer.trainer_id = trainer_pokemon.trainer_id
+        GROUP BY trainer.trainer_id, trainer.trainer_name
+        ORDER BY antal DESC
+        LIMIT 1
+    `;
+
+    connection.query(sql, (error, results) => {
+        if (error) {
+            return res.status(500).send(error.message);
+        }
+
+        res.json(results);
+    });
+});
+
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
