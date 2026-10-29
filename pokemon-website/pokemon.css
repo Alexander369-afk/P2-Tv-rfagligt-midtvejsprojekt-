@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -12,8 +13,6 @@ body {
 .pokemonsBody {
     background: linear-gradient(135deg, #150b2b, #30005c);
     color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
     min-height: 100vh;
 }
 
@@ -35,10 +34,10 @@ header h1 {
 header h2 {
     margin: 0;
     font-size: 28px;
-    color: #ef4443;
+    color: #ef4444;
 }
 
-/* ALLE TRE SECTIONS */
+/* SECTIONS */
 
 section {
     background-color: #242638;
@@ -91,25 +90,36 @@ input:focus, select:focus {
     border-left: 4px solid #22c55e;
 }
 
+/* HOVEDCONTAINER */
+
 .pokeBoksStor {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 20px;
     padding: 30px;
-    border-radius: 15px;
-    margin: 40px auto;
+    width: 100%;
+    align-items: stretch;
 }
 
-.pokeBoksStor section {
-    flex: 1;
+.pokeBoksStor > section {
     min-width: 0;
-    background: transparent;
-    padding: 0 15px;
     margin: 0;
-    border-radius: 0;
+    padding: 25px;
+}
+
+/* OPRET TRÆNER */
+
+.pokeBoksStor > .opretTræner {
+    flex: 3;
+}
+
+.pokeBoksStor > .opretTræner {
+    flex: 3;
 }
 
 .trænerInput {
     display: flex;
+    flex-direction: row;
     gap: 10px;
     align-items: center;
 }
@@ -120,12 +130,31 @@ input:focus, select:focus {
 }
 
 .trænerInput button {
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: 2px solid #666;
     border-radius: 10px;
     background-color: #50566b;
-    color: #ffffff;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
 }
+
+.trænerInput button:hover {
+    background-color: #636b85;
+}
+
+/* FORBIND TRÆNER */
+
+.forbindTræner {
+    width: 250px;
+    max-width: 100%;
+}
+
+.forbindTræner select {
+    width: 100%;
+}
+
+/* POKEMON OG TRÆNER GRID */
 
 #pokemonContainer {
     display: grid;
@@ -139,111 +168,132 @@ input:focus, select:focus {
     gap: 20px;
 }
 
-.træ
+/* FORSIDE */
 
- MOBIL 
-/*
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1/1;
+    padding: 16px;
+    border-radius: 48px;
+    color: inherit;
+    text-align: left;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(28, 42, 90, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-pokemons {
+    background: #e8552b;
+}
+
+.card-trainers {
+    background: #4cc39a;
+}
+
+.card-dashboard {
+    background: #1c2a5a;
+}
+
+.card-title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.card-image {
+    flex: 1;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 12px 12px 12px 20px;
+}
+
+.card-info strong {
+    display: flex;
+    font-size: 1.2rem;
+}
+
+.card-info small {
+    color: #4a5a8a;
+}
+
+.card-play {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 28px;
+    background: #f4c542;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(28, 42, 90, 0.2);
+}
+
+.card:hover .card-play {
+    transform: scale(1.1);
+}
+
+/* MOBIL */
+
+@media (max-width: 900px) {
+    .pokeBoksStor {
+        flex-direction: column;
+    }
+
+    .pokeBoksStor > section {
+        width: 100%;
+    }
+
+    .trænerInput {
+        flex-wrap: wrap;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 34px;
     }
 
-    section {
-        margin: 20px 15px;
-        padding: 20px;
+    .trænerInput {
+        flex-direction: column;
+        align-items: stretch;
     }
-}
-    */
 
-*{
-  box-sizing: border-box;
-}
-body{
-  margin: 0;
-  font-family: Montserrat, sans-serif;
-  background: #f3f5fb;
-  color: #1c2a5a;
-}
-.row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 20px;
-}
-.card-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-  width: 100%;
-}
-
-.card{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  aspect-ratio: 1/1;
-  padding: 16px;
-  border-radius: 48px;
-
-  text-decoration: grey;
-  color: inherit;
-  text-align: left;
-
-  /* INTEARAKTIVITET */
-  box-shadow: 0 8px 24px rgba(28, 42, 90, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-pokemons {background: #e8552b}
-.card-trainers {background: #4cc39a}
-.card-dashboard {background: #1c2a5a}
-
-.card-title{
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-.card-image{
-  flex:1;
-}
-
-.card-info{
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background: white;
-  border-radius: 20px;
-  padding: 12px 12px 12px 20px;
-}
-.card-info strong {
-  display: flex;
-  font-size: 1.2rem;
-}
-.card-info small {
-  color: #4a5a8a;
-}
-.card-play {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-
-  width: 52px;
-  height: 52px;
-  border-radius: 28px;
-  background: #f4c542;;
-}
-.card:hover {
-  transform: translateY(6px);
-  box-shadow: 0 16px 32px rgba(28, 42, 90, 0.2);
-}
-.card:hover card-play{
-  transform:scale(1.6);
+    .card-grid,
+    #pokemonContainer,
+    #trænerContainer {
+        grid-template-columns: 1fr;
+    }
 }

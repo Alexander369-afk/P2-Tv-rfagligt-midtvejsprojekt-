@@ -13,8 +13,8 @@
   <h2>Træner</h2>
 </header>
 
-<div class = "pokeBoksStor">
-  <section class ="trænerOpret">
+<div class="pokeBoksStor">
+  <section class="opretTræner">
     <h2>Opret en træner</h2>
     <label for="trænerNavn">Træner navn:</label>
 
@@ -26,9 +26,20 @@
       <button type="button" id ="opretTræner">Opret</button>
     </div>
 
+    <div class="forbindTræner">
+      <label for="trænerPokemonForbind">Forbind din træner</label>
+      <select id="trænerPokemonForbind">
+        <option value="bulbasaur">Bulbasaur</option>
+        <option value="charmander">Charmander</option>
+        <option value="squirtle">Squirtle</option>
+        <option value="pikachu">Pikachu</option>
+      </select>
+    </div>
+
     <p id="besked"></p>
 
   </section>
+
 
   <section class ="filterTræner">
     <h2>Filter af Træner</h2>
