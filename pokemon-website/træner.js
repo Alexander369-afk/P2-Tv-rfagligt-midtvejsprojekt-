@@ -9,6 +9,14 @@ if (!navn && !homeTown && !alder) {
     return;
 }
 
+
+
+    fetch("http://localhost:3000/trainer/new")
+        .then(response => response.json())
+        .then(trainerTrainer => {
+            RenderDataTrainer(trainerTrainer);
+        });
+
 fetch("http://localhost:3000/trainer/new", {
     method: "POST",
     headers: {
@@ -24,3 +32,30 @@ fetch("http://localhost:3000/trainer/new", {
 }
 
 document.querySelector("#opretTræner").addEventListener("click", opretTræner);
+
+
+
+
+
+function RenderDataTrainer(data) {
+
+    const listTrainer = document.querySelector("#trainerContainer");
+    listTrainer.replaceChildren();
+
+    data.forEach(trainerdata => {
+
+        const card = document.createElement("article");
+        card.classList.add("pokemon-card");
+
+        const trainerImage = document.createElement("img");
+        trainerImage.alt = trainerdata.name;
+        trainerImage.src = "./images/ash.png"
+
+        const trainerName = document.createElement("h4");
+        trainerName.textContent = pokemondata.name;
+
+        card.appendChild(trainerName);
+        card.appendChild(trainerImage);
+        listPokemon.appendChild(card);
+    });
+}
