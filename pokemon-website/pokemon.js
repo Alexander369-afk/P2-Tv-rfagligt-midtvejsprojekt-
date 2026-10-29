@@ -28,6 +28,16 @@ function RenderData(data) {
         pokemonImage.alt = pokemondata.name;
         pokemonImage.src = `../pokemon-images/${pokemondata.pokedex_number}.png`;
 
+        const rarityBadge = document.createElement("img");
+        rarityBadge.src = `../img/rarity/rarity-${pokemondata.rarity_id}.svg`;
+        rarityBadge.alt = "";
+        rarityBadge.classList.add("rarity-badge");
+        card.appendChild(rarityBadge);
+
+
+
+
+
         const pokemonName = document.createElement("h4");
         pokemonName.textContent = pokemondata.name;
 
