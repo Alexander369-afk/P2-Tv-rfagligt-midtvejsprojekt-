@@ -33,9 +33,10 @@ app.get('/all', (req, res) => {
 
     connection.query("SELECT * FROM pokemon WHERE name LIKE ? AND (?= 'all' or primary_type = ?) ORDER BY " + sortColumn + " " + sortOrder,
         ["%" + name + "%", type, type], (error, results) => {
-        if (error) {
-            return res.status(500).send(error);
-        }
+            if (error) {
+                console.log("SQL FEJL:", error);
+                return res.status(500).send(error.message);
+            }
 
         res.send(results);
     });
@@ -45,18 +46,33 @@ app.post('/trainer/new', (req, res) => {
     const trainerName = req.body.trainerName;
     const homeTown = req.body.homeTown;
     const trainerAge = req.body.trainerAge;
+    const pokemonId = req.body.pokemonId;
 
-    connection.query(
-        "INSERT INTO trainer (trainer_name, hometown, age) VALUES (?, ?, ?)",
-        [trainerName, homeTown, trainerAge],
-        (error, result) => {
-            if (error) {
-                return res.status(500).send(error.message);
-            }
+            connection.query(
+                "INSERT INTO trainer (trainer_name, hometown, age) VALUES (?, ?, ?)",
+                [trainerName, homeTown, trainerAge],
+                (error, result) => {
+                    if (error) {
+                        console.log("FEJL VED OPRET TRÆNER:", error.message);
+                        return res.status(500).send(error.message);
+                    }
+                    const trainerId = result.insertId;
+                    console.log("TRÆNER OPRETTET MED ID:", trainerId);
 
-            res.send("Ny træner");
-        }
-    );
+                    connection.query(
+                        "INSERT INTO trainer_pokemon (trainer_id, pokedex_number) VALUES (?, ?)",
+                        [trainerId, pokemonId],
+                        (error) => {
+                            if (error) {
+                                console.log(error);
+                                return res.status(500).send(error.message);
+                            }
+
+                            res.send("Ny træner oprettet med " + pokemonId);
+                        }
+                    );
+                }
+            );
 });
 
 app.listen(port, () => {
