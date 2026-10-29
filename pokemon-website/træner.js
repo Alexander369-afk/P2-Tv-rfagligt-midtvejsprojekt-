@@ -62,3 +62,4 @@ function RenderDataTrainer(data) {
         listPokemon.appendChild(card);
     });
 }
+b
