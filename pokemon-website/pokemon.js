@@ -45,8 +45,9 @@ function RenderData(data) {
             { label: "Speed", value: pokemondata.speed },
             { label: "Primary Type", value: pokemondata.primary_type},
             { label: "Special Defense", value: pokemondata.special_defence},
-            { label: "Special Attack", value: pokemondata.special_attack}
-
+            { label: "Special Attack", value: pokemondata.special_attack},
+            { label: "Secondary type", value: pokemondata.secondary_type}
+            
         ];
 
         statGenerator.forEach(stat =>  {
