@@ -30,7 +30,14 @@ function RenderDataTrainer(data) {
 
         const trainerImage = document.createElement("img");
         trainerImage.alt = trainerdata.trainer_name;
-        trainerImage.src = "../Images/ash.png"
+        trainerImage.src = `../img/trainers/${trainerdata.trainer_id}.png`;
+
+        const levelBadge = document.createElement("img");
+        levelBadge.src = `../img/trainerbadges/level-${trainerdata.level_id}.svg`;
+        levelBadge.alt = "";
+        levelBadge.classList.add("rarity-badge");
+        card.appendChild(levelBadge);
+
 
         const trainerName = document.createElement("h4");
         trainerName.textContent = trainerdata.trainer_name

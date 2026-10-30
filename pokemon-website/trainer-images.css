@@ -1,0 +1,9 @@
+#trainerContainer .pokemon-card img:not(.rarity-badge) {
+  display: block;
+  height: 160px;
+  width: auto;
+  max-width: 100%;
+  margin: 12px auto 8px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.5));
+}

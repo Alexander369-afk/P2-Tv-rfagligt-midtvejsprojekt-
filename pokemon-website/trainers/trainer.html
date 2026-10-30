@@ -5,6 +5,8 @@
   <title>Træner</title>
   <link rel="stylesheet" href="../pokemon.css">
   <link rel="stylesheet" href="../Pokecard.css">
+  <link rel="stylesheet" href="../trainer-images.css">
+  <link rel="stylesheet" href="../rarity.css">
   <script src="../træner.js" defer></script>
 </head>
 <body class = "pokemonsBody">
@@ -79,7 +81,35 @@
 </div>
 
 <section class="trænerResultater">
+  <div class="section-header">
+
+  </div>
   <h2>Alle Trænere</h2>
+
+  <ul class ="trainer-emblem-guide">
+  <li class="trainer-emblem-item trainer-emblem-begynder">
+    <img src="../img/trainerbadges/level-1.svg" alt="trainerlvlbadge1">
+         <div>
+           <strong>Begynder</strong>
+           <small>0 Badges</small>
+         </div>
+  </li>
+
+      <li class="trainer-emblem-item trainer-emblem-goat">
+        <img src="../img/trainerbadges/level-6.svg" alt="trainerlvlbadge6"
+        <div>
+          <strong>Goat</strong>
+          <small>8+ Badges</small>
+        </div>
+      </li>
+    <li class="trainer-emblem-item trainer-emblem-gym">
+      <img src="../img/trainerbadges/level-7.svg" alt="trainerlvlbadge7"
+      <div>
+        <strong>Gym Leader</strong>
+        <small>Leder et gym</small>
+      </div>
+    </li>
+  </ul>
 
   <article id="trainerContainer">
     <!-- trænere indsætteds her med js -->

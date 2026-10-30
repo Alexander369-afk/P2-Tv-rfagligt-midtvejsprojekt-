@@ -1,19 +1,39 @@
-/* Rarity-badge øverst til højre på Pokémon-kortene */
+/* Kortet: navn + badge på én linje, billede nedenunder */
 .pokemon-card {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  column-gap: 0;
+  row-gap: 8px;
+  padding-top: 12px;
 }
 
+/* Venstre halvdel af pillen: navnet */
+.pokemon-card h4 {
+  height: 32px;
+  line-height: 24px;
+  padding: 4px 8px 4px 14px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 999px 0 0 999px;
+  box-shadow: none;
+}
+
+/* Højre halvdel af pillen: ikonet */
 .pokemon-card .rarity-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 46px;
-  height: 46px;
-  padding: 9px;
+  order: 1;
+  box-sizing: border-box;
+  width: 34px;
+  height: 32px;
+  padding: 7px 12px 7px 4px;
   margin: 0;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 0 999px 999px 0;
+}
+
+/* Pokémon-billedet får sin egen linje */
+.pokemon-card img:not(.rarity-badge) {
+  flex-basis: 100%;
+  order: 2;
 }
