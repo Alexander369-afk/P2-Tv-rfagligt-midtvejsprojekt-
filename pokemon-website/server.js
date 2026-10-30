@@ -156,6 +156,31 @@ app.get('/statistics/trainers', (req, res) => {
     });
 });
 
+app.get('/trainer/relations', (req, res) => {
+
+    const sql = `
+        SELECT
+            trainer.trainer_id,
+            trainer.trainer_name,
+            GROUP_CONCAT(pokemon.name SEPARATOR ', ') AS pokemons
+        FROM trainer
+        INNER JOIN trainer_pokemon
+            ON trainer.trainer_id = trainer_pokemon.trainer_id
+        INNER JOIN pokemon
+            ON trainer_pokemon.pokedex_number = pokemon.pokedex_number
+        GROUP BY trainer.trainer_id, trainer.trainer_name
+        ORDER BY trainer.trainer_name ASC
+    `;
+
+    connection.query(sql, (error, results) => {
+        if (error) {
+            return res.status(500).send(error.message);
+        }
+
+        res.json(results);
+    });
+});
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

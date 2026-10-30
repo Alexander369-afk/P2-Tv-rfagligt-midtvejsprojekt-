@@ -5,6 +5,11 @@ function hentTrænere() {
     const sort = document.querySelector("#sorteringTrænere").value;
     const order = document.querySelector("#sortOrder").value;
 
+    if (sort === "relationer") {
+        hentRelationer();
+        return;
+    }
+
     fetch(`http://localhost:3000/trainer?type=${type}&sort=${sort}&order=${order}`)
         .then(response => response.json())
         .then(trænere => {
@@ -78,9 +83,32 @@ fetch("http://localhost:3000/trainer/new", {
 
 }
 
+function hentRelationer() {
+
+    fetch("http://localhost:3000/trainer/relations")
+        .then(response => response.json())
+        .then(data => {
+
+            const container = document.querySelector("#trainerContainer");
+            container.replaceChildren();
+
+            data.forEach(relation => {
+
+                const card = document.createElement("article");
+
+                const tekst = document.createElement("p");
+                tekst.textContent = `${relation.trainer_name} :  ${relation.pokemons}`;
+
+                card.appendChild(tekst);
+                container.appendChild(card);
+
+                const sort = document.querySelector("#sorteringTrænere").value;
+
+            });
+        });
+}
+
 
 document.querySelector("#opretTræner").addEventListener("click", opretTræner);
 hentTrænere();
-
-
 
