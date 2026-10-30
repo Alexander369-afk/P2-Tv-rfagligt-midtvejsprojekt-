@@ -35,6 +35,52 @@ function RenderData(data) {
         card.appendChild(rarityBadge);
 
 
+        const Stats = document.createElement("div"); 
+        Stats.classList.add ("card-stats", "hidden");
+
+        const statGenerator = [
+            { label: "HP", value: pokemondata.hp },
+            { label: "Attack", value: pokemondata.attack },
+            { label: "Defense", value: pokemondata.defense },
+            { label: "Speed", value: pokemondata.speed }
+        ];
+
+        statGenerator.forEach(stat =>  {
+        const statline = document.createElement("p");
+             
+        const strongStatLine = document.createElement("strong"); 
+        strongStatLine.textContent = `${stat.label}: `;
+
+        statline.appendChild(strongStatLine);
+
+        let talVærdi = stat.value
+        if (stat.value === null || stat.value === undefined) {
+                  talVærdi = "N/A";
+        }
+         statline.append(talVærdi)
+
+        });
+       
+        
+        
+
+        const pokeButton = document.createElement("button");
+        pokeButton.type = "button";
+        pokeButton.classList.add("button-stats")
+        pokeButton.textContent = "Vis Stats";
+
+        pokeButton.addEventListener("click"), () => {
+          const statsAreHidden = Stats.toggle("hidden");
+          pokemonImage.classList.toggle("hidden");
+
+         if (statsAreHidden) {
+          pokeButton.textContent = "Vis Stats";
+             } else {
+                 pokeButton.textContent = "Vis Billede";
+                    }
+        };
+        
+        
 
 
 
@@ -44,7 +90,9 @@ function RenderData(data) {
         if (pokemondata.primary_type) {
             card.classList.add(pokemondata.primary_type.toLowerCase());
         }
-
+        
+        card.appendChild(pokeButton)
+        card.appendChild(Stats) 
         card.appendChild(pokemonName);
         card.appendChild(pokemonImage);
         listPokemon.appendChild(card);
