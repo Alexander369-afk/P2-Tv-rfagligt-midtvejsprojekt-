@@ -60,17 +60,14 @@ function RenderData(data) {
          statline.append(talVærdi)
 
         });
-       
-        
-        
 
         const pokeButton = document.createElement("button");
         pokeButton.type = "button";
         pokeButton.classList.add("button-stats")
         pokeButton.textContent = "Vis Stats";
 
-        pokeButton.addEventListener("click"), () => {
-          const statsAreHidden = Stats.toggle("hidden");
+        pokeButton.addEventListener("click", () => {
+          const statsAreHidden = Stats.classList.toggle("hidden");
           pokemonImage.classList.toggle("hidden");
 
          if (statsAreHidden) {
@@ -78,7 +75,7 @@ function RenderData(data) {
              } else {
                  pokeButton.textContent = "Vis Billede";
                     }
-        };
+        });
         
         
 
