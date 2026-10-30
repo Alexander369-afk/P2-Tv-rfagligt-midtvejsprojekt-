@@ -20,7 +20,7 @@ function RenderData(data) {
     listPokemon.replaceChildren();
 
     data.forEach(pokemondata => {
-
+    
         const card = document.createElement("article");
         card.classList.add("pokemon-card");
 
@@ -32,17 +32,21 @@ function RenderData(data) {
         rarityBadge.src = `../img/rarity/rarity-${pokemondata.rarity_id}.svg`;
         rarityBadge.alt = "";
         rarityBadge.classList.add("rarity-badge");
-        card.appendChild(rarityBadge);
+        
 
-
+         //AI 
         const Stats = document.createElement("div"); 
         Stats.classList.add ("card-stats", "hidden");
 
         const statGenerator = [
             { label: "HP", value: pokemondata.hp },
             { label: "Attack", value: pokemondata.attack },
-            { label: "Defense", value: pokemondata.defense },
-            { label: "Speed", value: pokemondata.speed }
+            { label: "Defence", value: pokemondata.defence },
+            { label: "Speed", value: pokemondata.speed },
+            { label: "Primary Type", value: pokemondata.primary_type},
+            { label: "Special Defense", value: pokemondata.special_defence},
+            { label: "Special Attack", value: pokemondata.special_attack}
+
         ];
 
         statGenerator.forEach(stat =>  {
@@ -58,6 +62,8 @@ function RenderData(data) {
                   talVærdi = "N/A";
         }
          statline.append(talVærdi)
+         Stats.appendChild(statline)
+         // AI SLUT
 
         });
 
@@ -65,10 +71,11 @@ function RenderData(data) {
         pokeButton.type = "button";
         pokeButton.classList.add("button-stats")
         pokeButton.textContent = "Vis Stats";
-
+        // AI
         pokeButton.addEventListener("click", () => {
           const statsAreHidden = Stats.classList.toggle("hidden");
           pokemonImage.classList.toggle("hidden");
+        // AI SLUT
 
          if (statsAreHidden) {
           pokeButton.textContent = "Vis Stats";
@@ -77,23 +84,23 @@ function RenderData(data) {
                     }
         });
         
-        
-
-
-
         const pokemonName = document.createElement("h4");
         pokemonName.textContent = pokemondata.name;
-
+        // AI
         if (pokemondata.primary_type) {
             card.classList.add(pokemondata.primary_type.toLowerCase());
-        }
+        }  
         
-        card.appendChild(pokeButton)
-        card.appendChild(Stats) 
-        card.appendChild(pokemonName);
-        card.appendChild(pokemonImage);
+         card.appendChild(rarityBadge);
+         card.appendChild(pokemonName);
+         card.appendChild(pokemonImage);
+         card.appendChild(Stats);
+         card.appendChild(pokeButton);
+        
+       
         listPokemon.appendChild(card);
     });
+    // AI slut
 }
 
 
