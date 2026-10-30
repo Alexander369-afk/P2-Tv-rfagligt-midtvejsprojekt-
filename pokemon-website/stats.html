@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokeview | Statistikker</title>
+    <link rel="stylesheet" href="stats.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="stats.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Pokeview</h1>
+    <h2>Statistikker</h2>
+</header>
+
+<main class="statistik-container">
+
+    <div class="graf-container">
+
+        <section class="statistik-kort">
+            <h2>Antal Pokémon pr. type</h2>
+            <p>Fordelingen af Pokémon-typer</p>
+            <div class="graf">
+                <canvas id="typeChart"></canvas>
+            </div>
+        </section>
+
+        <section class="statistik-kort">
+            <h2>Gennemsnitlig Attack</h2>
+            <p>Gennemsnitlig attack for hver type</p>
+            <div class="graf">
+                <canvas id="attackChart"></canvas>
+            </div>
+        </section>
+
+    </div>
+
+    <section class="statistik-kort bedste-kort">
+        <h2>Træner med flest Pokémon</h2>
+        <p>Den træner, der ejer flest Pokémon</p>
+        <h3 id="bedsteTrainer"></h3>
+    </section>
+
+</main>
+
+</body>
+</html>

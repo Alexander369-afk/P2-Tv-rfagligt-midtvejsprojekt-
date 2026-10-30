@@ -1,12 +1,20 @@
 console.log("Træner.js virker!");
 
+function hentTrænere() {
+    const type = document.querySelector("#typeFilterTræner").value;
+    const sort = document.querySelector("#sorteringTrænere").value;
+    const order = document.querySelector("#sortOrder").value;
 
- fetch("http://localhost:3000/trainer")
+    fetch(`http://localhost:3000/trainer?type=${type}&sort=${sort}&order=${order}`)
         .then(response => response.json())
-        .then(trainerTrainer => {
-            RenderDataTrainer(trainerTrainer);
+        .then(trænere => {
+            RenderDataTrainer(trænere);
         });
+}
 
+document.querySelector("#typeFilterTræner").addEventListener("change", hentTrænere);
+document.querySelector("#sorteringTrænere").addEventListener("change", hentTrænere);
+document.querySelector("#sortOrder").addEventListener("change", hentTrænere);
 
 
 
@@ -63,8 +71,9 @@ fetch("http://localhost:3000/trainer/new", {
 
 }
 
-document.querySelector("#opretTræner").addEventListener("click", opretTræner);
 
+document.querySelector("#opretTræner").addEventListener("click", opretTræner);
+hentTrænere();
 
 
 

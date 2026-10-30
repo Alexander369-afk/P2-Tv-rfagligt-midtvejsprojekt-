@@ -1,0 +1,121 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #150b2b, #30005c);
+    color: white;
+}
+
+
+header {
+    text-align: center;
+    padding: 45px 20px;
+    background-color: #1f2937;
+    border-bottom: 3px solid #ef4444;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #ef4444;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #ef4444;
+}
+
+    header p {
+        color: #b8b8c8;
+    }
+
+
+    .statistik-container {
+        max-width: 1400px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+
+    .graf-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+
+    .statistik-kort {
+        background-color: #242638;
+        border: 1px solid #393b51;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 25px;
+        min-width: 0;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .statistik-kort:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .statistik-kort h2 {
+        margin-top: 0;
+        font-size: 22px;
+    }
+
+    .statistik-kort p {
+        color: #a9a9ba;
+        margin-bottom: 25px;
+    }
+
+
+    .graf {
+        height: 350px;
+        position: relative;
+    }
+
+
+    .bedste-kort {
+        text-align: center;
+        background: linear-gradient(135deg, #242638, #332044);
+    }
+
+    #bedsteType {
+        display: inline-block;
+        color: #ef4444;
+        font-size: 36px;
+        margin: 10px 0;
+        padding: 20px 40px;
+        background-color: #1a1b2b;
+        border-radius: 12px;
+    }
+
+    /* MOBIL */
+
+    @media (max-width: 850px) {
+        .graf-container {
+            grid-template-columns: 1fr;
+        }
+
+        .statistik-kort {
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        #bedsteType {
+            font-size: 26px;
+            padding: 15px 20px;
+        }
+    }
+
