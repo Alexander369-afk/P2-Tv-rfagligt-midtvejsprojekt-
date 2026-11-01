@@ -21,10 +21,12 @@
     border: 3px solid #7b4f4f;
     border-radius: 12px;
     text-align: center; 
+
+    /* AI START */
     background-color: rgba(20, 24, 33, 0.35);
     background-blend-mode: overlay;
     position: relative;
-   
+   /*AI SLUT*/
 }
 
 
@@ -40,7 +42,7 @@
     letter-spacing: 1.5px;
 
 }
-/* AI START */
+
 
 .card-stats
 {
@@ -84,16 +86,7 @@
     object-fit: contain;
 }
 
- .trainer-image
-{
-    width: 100%;
-    height: auto;
-    margin: 0 auto 8px auto;
-    object-fit: contain;
-    object-position: top center;
-    
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.65));
-}
+/* AI slut */
 
 .pokemon-card img
 {

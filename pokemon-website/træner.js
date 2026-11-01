@@ -54,7 +54,8 @@ function RenderDataTrainer(data) {
             { label: "Hometown", value: trainerdata.hometown },
             { label: "Badges", value: trainerdata.badge_count },
             { label: "Wins", value: trainerdata.wins},
-            { label: "Level", value: trainerdata.level_id}    
+            { label: "Level", value: trainerdata.level_id},
+            { label: "Pokemons", value: trainerdata.pokemons || "Ingen" }   
         ];
 
         statGenerator.forEach(stat =>  {
