@@ -6,50 +6,29 @@ det her resultat. det var sådan her jeg ville have det og jeg fulgte det trin f
 
 /* ===== Pokémon-kortene: navn + badge i én pille ===== */
 
-/* Kortet: navn og badge på første linje, billedet nedenunder */
-.pokemon-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-start;
-  column-gap: 0;
-  row-gap: 8px;
-  padding-top: 12px;
-}
+/* Kortet: navn og badge på første linje, billedet nedenunder */ 
 
-/* Venstre halvdel af pillen: navnet */
-.pokemon-card h4 {
-  height: 32px;
-  line-height: 24px;
-  padding: 4px 8px 4px 14px;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 999px 0 0 999px;
-  box-shadow: none;
-}
-
-/* Højre halvdel af pillen: rarity-ikonet */
 .pokemon-card .rarity-badge {
-  order: 1;
-  box-sizing: border-box;
-  width: 34px;
-  height: 32px;
-  padding: 7px 12px 7px 4px;
-  margin: 0;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 0 999px 999px 0;
+    position: absolute;
+    top: 8px;
+    right: 4px;
+    width: 28px;                   /* Fuld synlig størrelse */
+    height: 28px;
+    padding: 0;                    /* NUL padding der æder billedet indefra! */
+    margin: 0;
+    border-radius: 50%;            /* Helt rundt emblem */
+    background: rgba(0, 0, 0, 0.55);
+    object-fit: contain;           /* Viser hele stjernen/symbolet skarpt */
+    z-index: 5;
 }
 
-/* Pokémon-billedet får sin egen linje og er centreret */
+/* 3. Pokémon-billedet under navnet */
 .pokemon-card img:not(.rarity-badge) {
-  flex-basis: 100%;
-  order: 2;
+    flex-basis: 100%;
+    order: 2;
 }
 
 
-/* ===== Forklaring af rarity over kortene ===== */
-
-/* Headeren: tre kolonner, så overskriften står til venstre og pillerne i midten */
 .rarity-header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -58,12 +37,11 @@ det her resultat. det var sådan her jeg ville have det og jeg fulgte det trin f
   margin-bottom: 20px;
 }
 
-/* Overskriften: fjerner standardmargin, så den flugter med pillerne */
 .rarity-header h2 {
   margin: 0;
 }
 
-/* Listen: fjerner prikker og indrykning og sætter pillerne side om side */
+
 .rarity-guide {
   list-style: none;
   margin: 0;
@@ -74,7 +52,7 @@ det her resultat. det var sådan her jeg ville have det og jeg fulgte det trin f
   gap: 10px;
 }
 
-/* Én pille: mørk baggrund, runde ender og ikon + tekst på én linje */
+
 .rarity-item {
   display: flex;
   align-items: center;
@@ -87,7 +65,7 @@ det her resultat. det var sådan her jeg ville have det og jeg fulgte det trin f
   color: #ffffff;
 }
 
-/* Ikonet: lille og placeret i en mørk cirkel til venstre i pillen */
+
 .rarity-item img {
   width: 30px;
   height: 30px;

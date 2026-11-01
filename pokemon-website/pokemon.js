@@ -39,6 +39,7 @@ function RenderData(data) {
         Stats.classList.add ("card-stats", "hidden");
 
         const statGenerator = [
+            { label: "ID", value: pokemondata.pokedex_number},
             { label: "HP", value: pokemondata.hp },
             { label: "Attack", value: pokemondata.attack },
             { label: "Defence", value: pokemondata.defence },
