@@ -1,4 +1,4 @@
-require('dotenv').config({ path: './pokemon-website/.env' });
+½require('dotenv').config({ path: './pokemon-website/.env' });
 console.log("Bruger:", process.env.DB_USER);
 console.log("Adgangskode fundet:", !!process.env.DB_PASSWORD);
 const express = require('express');

@@ -41,15 +41,67 @@ function RenderDataTrainer(data) {
         levelBadge.src = `../img/trainerbadges/level-${trainerdata.level_id}.svg`;
         levelBadge.alt = "";
         levelBadge.classList.add("rarity-badge");
-        card.appendChild(levelBadge);
+        
 
+         //AI 
+        const Stats = document.createElement("div"); 
+        Stats.classList.add ("card-stats", "hidden");
+
+        const statGenerator = [
+            { label: "ID", value: trainerdata.trainer_id},
+            { label: "Name", value: trainerdata.trainer_name},
+            { label: "Age", value: trainerdata.age},
+            { label: "Hometown", value: trainerdata.hometown },
+            { label: "Badges", value: trainerdata.badge_count },
+            { label: "Wins", value: trainerdata.wins},
+            { label: "Level", value: trainerdata.level_id}    
+        ];
+
+        statGenerator.forEach(stat =>  {
+        const statline = document.createElement("p");
+             
+        const strongStatLine = document.createElement("strong"); 
+        strongStatLine.textContent = `${stat.label}: `;
+
+        statline.appendChild(strongStatLine);
+
+        let talVærdi = stat.value
+        if (stat.value === null || stat.value === undefined) {
+                  talVærdi = "N/A";
+        }
+         statline.append(talVærdi)
+         Stats.appendChild(statline)
+         // AI SLUT
+
+        });
+
+        const trainerButton = document.createElement("button");
+        trainerButton.type = "button";
+        trainerButton.classList.add("button-stats")
+        trainerButton.textContent = "Vis Stats";
+        // AI
+        trainerButton.addEventListener("click", () => {
+          const statsAreHidden = Stats.classList.toggle("hidden");
+          trainerImage.classList.toggle("hidden");
+        // AI SLUT
+
+         if (statsAreHidden) {
+          trainerButton.textContent = "Vis Stats";
+             } else {
+                 trainerButton.textContent = "Vis Billede";
+                    }
+        });
 
         const trainerName = document.createElement("h4");
         trainerName.textContent = trainerdata.trainer_name
 
-        card.appendChild(trainerName);
-        card.appendChild(trainerImage);
-        listTrainer.appendChild(card);
+         card.appendChild(levelBadge);
+         card.appendChild(trainerName);
+         card.appendChild(trainerImage);
+         card.appendChild(Stats);
+         card.appendChild(trainerButton);
+        
+         listTrainer.appendChild(card);
     });
 }
 
